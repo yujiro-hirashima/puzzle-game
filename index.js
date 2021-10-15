@@ -15,13 +15,22 @@ PositionInitial();
 xyInitial();
 InitialMove();
 
-// console.log();
-
 MovingConfig();
+      // console.log(x);
+      // console.log(y);
+      // console.log(goRight);
+      // console.log(goLeft);
+      // console.log(goTop);
+      // console.log(goBottom);
+      // console.log(empty);
+      // console.log(position);
+      // console.log(xMove);
+      // console.log(yMove);
+
+
+
 MovingConfig2();
   
   
   
-  //属性を数値に変換して計算
-  // $(target).attr('data-y',Number($(target).attr('data-y'))+1);
 
