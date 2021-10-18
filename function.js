@@ -1,17 +1,27 @@
-function PositionInitial(){
-  for(i = 1;i <= 15 ;i++){
-    while(true){
-      let randomPosition = Math.floor(Math.random() * 15) +1;
-      if(!position.includes(randomPosition)){
-        position.push(randomPosition);
-        break;
-      }
-    }
-  }
 
+//////////////////////////////////////ランダム風初期配置設定
+function PositionInitial(){
+
+  const randomImitation =[
+    // [12,5,7,10,6,8,3,9,2,4,15,1,14,11,13],
+    // [6,3,13,1,9,4,10,2,7,12,5,15,8,11,14],
+    // [15,10,6,13,5,4,3,9,2,7,11,8,14,1,12],
+    // [14,13,3,11,10,6,8,1,5,15,7,4,9,2,12],
+    // [10,7,6,12,15,11,8,14,2,5,13,4,9,3,1],
+    // [7,14,15,9,13,6,5,4,3,10,8,12,2,1,11],
+    // [3,13,8,9,14,12,1,7,4,5,11,15,10,2,6]
+    [1,2,3,4,5,6,7,8,9,10,12,15,13,14,11]
+  ];
+  
+  const randomPosition = Math.floor(Math.random() * 1);
+
+    for(i=0;i<15;i++){
+      position[i] = (randomImitation[randomPosition][i]);
+    }
 }
 
 
+//////////////////////////////////////ｘ値、ｙ値のセット
 function xySet(n){
   switch(position[n]){
     case 1 : x[n] = 1;  y[n] = 1;  break;
@@ -34,13 +44,14 @@ function xySet(n){
   }
 }
 
-
 function xyInitial(){
   for(i=0;i<15;i++){
     xySet(i);
   }
 }
 
+
+//////////////////////////////////////初期配置実行
 function InitialMove(){
   
   for(i=0;i<15;i++){
@@ -109,8 +120,8 @@ function InitialMove(){
         
       }
     }
-    position_x *= 150;
-    position_y *= 150;
+    position_y *= 100;
+    position_x *= 100;
 
     xMove[i] = position_x;
     yMove[i] = position_y;
@@ -121,6 +132,7 @@ function InitialMove(){
 }
 
 
+//////////////////////////////////////動ける方向の判定
 function MovingConfig(){
   for(i=0;i<16;i++){
     
@@ -148,35 +160,37 @@ function MovingConfig(){
 }
     
 
+//////////////////////////////////////移動先の設定
 function MovingJudge(p){
 
   if(goRight[p] && empty === position[p] + 1){
-    xMove[p] += 150;
+    xMove[p] += 100;
     judge = true;
   }
   if(goLeft[p] && empty === position[p] - 1){
-    xMove[p] -= 150;
+    xMove[p] -= 100;
     judge = true;
 
   }
   if(goTop[p] && empty === position[p] - 4){
-    yMove[p] -= 150;
+    yMove[p] -= 100;
     judge = true;
   }
   if(goBottom[p] && empty === position[p] + 4){
-    yMove[p] += 150;
+    yMove[p] += 100;
     judge = true;
   }
 }
 
 
+//////////////////////////////////////クリック時の移動処理
 function MovingConfig2(){
   
   for(i=0;i<15;i++){
     let target = element[i];
     let target_id = "#"+$(target).attr('id');
-    let now = position[i] -1;
-    
+    let now = Number($(target).attr('data-answer')) - 1;
+       
     $(target_id).on('click',()=>{
 
       MovingJudge(now);
@@ -186,19 +200,42 @@ function MovingConfig2(){
         [position[now],empty] = [empty,position[now]];
         judge = false;
 
-        xySet(now);
-        MovingConfig();
+        completeCheck();
+        //////////////////////////////クリア処理
+        if(complete === true){
+          clearInterval(setTime); setTime = null;
+
+          $(".stop-btn ").addClass("d-none");
+          $(".start-btn").removeClass("d-none");
+          $(".complete-btn").addClass("d-none");
+          $(".change-btn").removeClass("d-none");
+
+          $("#target-wrap").children().removeClass("border");
+          $("#clear").removeClass("d-none");
+          $("#target-16").css({"transform":"translate(0) ","opacity":"1"});
+          empty = 99;
+        }else{
+          xySet(now);
+          MovingConfig();
+        }
+
+
       }
-      // console.log(x);
-      // console.log(y);
-      // console.log(goRight);
-      // console.log(goLeft);
-      // console.log(goTop);
-      // console.log(goBottom);
-      console.log(empty);
-      // console.log(position);
-      // console.log(xMove);
-      // console.log(yMove);
     });
   }
+}
+
+
+//////////////////////////////////////完成チェック
+function completeCheck(){
+  for (i = 0; i < 15; i++) {
+     if(i + 1 === position[i]){
+       check[i] = true;
+     }else{
+       check[i] = false;
+     }
+   }
+  complete = check.every((val)=>{
+    return val === true;
+  });
 }

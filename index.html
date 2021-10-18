@@ -4,79 +4,188 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-<body>
-  <div class="container mt-5 bg-secondary vh-100 pt-1 " >
-    <div id="target-wrap" class="d-flex flex-wrap bg-primary " style="margin: auto; width: 600px; height: 600px;">
-        <div id="target-1"  class=" border border-light border-1 bg-dark text-warning"
-            style="transition:all 180ms; height:150px; width:150px;"
-            data-x="1" data-y="1" data-answer="1" data-right="true" data-left="true" data-top="true" data-bottom="true">1
+<body style="background-color: #634133; color: #634133;">
+
+  <div class="bg-primary w-100 " style="height: 50px;display: none;"></div>
+
+    <div class="d-flex d-md-none" style="background-color: #F0DA3D;">
+
+        <div class="my-2 my-sm-5 mx-5 mx-sm-2 px-3 shadow-lg w-50"
+             style="background-color: #EFAA00; border-radius: 10px;">
+            <h1>JS</h1>
+            <h2>puzzle</h2>
+            <p style="text-align: right;">byゆじろ</p>
         </div>
-          <div id="target-2"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="2" data-y="1" data-answer="2" data-right="true" data-left="true" data-top="true" data-bottom="true">2
-          </div>
-          <div id="target-3"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="3" data-y="1" data-answer="3" data-right="true" data-left="true" data-top="true" data-bottom="true">3
-          </div>
-          <div id="target-4"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="4" data-y="1" data-answer="4" data-right="true" data-left="true" data-top="true" data-bottom="true">4
-          </div>
-        <div id="target-5"  class=" border border-light border-1 bg-dark text-warning"
-            style="transition:all 180ms; height:150px; width:150px;"
-            data-x="1" data-y="2" data-answer="5" data-right="true" data-left="true" data-top="true" data-bottom="true">5
+        <div class="my-5 mx-1 text-center shadow-lg d-none d-sm-block">
+            <button class="start-btn btn btn-info w-100 h-100" style="height: 80px;">START</button>
         </div>
-          <div id="target-6"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="2" data-y="2" data-answer="6" data-right="true" data-left="true" data-top="true" data-bottom="true">6
-          </div>
-          <div id="target-7"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="3" data-y="2" data-answer="7" data-right="true" data-left="true" data-top="true" data-bottom="true">7
-          </div>
-          <div id="target-8"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="4" data-y="2" data-answer="8" data-right="true" data-left="true" data-top="true" data-bottom="true">8
-          </div>
-        <div id="target-9"  class=" border border-light border-1 bg-dark text-warning"
-            style="transition:all 180ms; height:150px; width:150px;"
-            data-x="1" data-y="3" data-answer="9" data-right="true" data-left="true" data-top="true" data-bottom="true">9
+        <div class="my-5 mx-1 text-center shadow-lg d-none d-sm-block">
+            <button class="stop-btn btn btn-secondary w-100 h-100 d-none" style="height: 80px;">GIVE UP</button>
         </div>
-          <div id="target-10"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="2" data-y="3" data-answer="10" data-right="true" data-left="true" data-top="true" data-bottom="true">10
-          </div>
-          <div id="target-11"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="3" data-y="3" data-answer="11" data-right="true" data-left="true" data-top="true" data-bottom="true">11
-          </div>
-          <div id="target-12"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="4" data-y="3" data-answer="12" data-right="true" data-left="true" data-top="true" data-bottom="true">12
-          </div>
-        <div id="target-13"  class=" border border-light border-1 bg-dark text-warning"
-            style="transition:all 180ms; height:150px; width:150px;"
-            data-x="1" data-y="4" data-answer="13" data-right="true" data-left="true" data-top="true" data-bottom="true">13
+        <div class="my-5 mx-1 text-center shadow-lg d-none d-sm-block">
+            <button class="complete-btn btn btn-danger w-100 h-100" style="height: 80px;">完成図</button>
         </div>
-          <div id="target-14"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="2" data-y="4" data-answer="14" data-right="true" data-left="true" data-top="true" data-bottom="true">14
-          </div>
-          <div id="target-15"  class=" border border-light border-1 bg-dark text-warning"
-              style="transition:all 180ms; height:150px; width:150px;"
-              data-x="3" data-y="4" data-answer="15" data-right="true" data-left="true" data-top="true" data-bottom="true">15
-          </div>
+        <div class="my-5 mx-1 text-center shadow-lg d-none d-sm-block">
+            <button class="btn btn-success w-100 h-100" style="height: 80px;">画像変更</button>
+        </div>
+        
+        <div class="d-sm-none mx-auto" style="background-color: #3C3130;">
+        <div class="mx-auto mt-3 d-flex">
+            <div class="my-2 mx-3 text-center shadow-lg">
+                <button class="start-btn btn btn-info" style="height: 40px; width: 100px;">START</button>
+            </div>
+            <div class="my-2 mx-3 text-center shadow-lg">
+                <button class="stop-btn btn btn-secondary d-none" style="height: 40px; width: 100px;">GIVE UP</button>
+            </div>
+        </div>
+        <div class="mx-auto d-flex">
+            <div class="my-2 mx-3 text-center shadow-lg">
+                <button class="btn btn-danger" style="height: 40px; width: 100px;">完成図</button>
+            </div>
+            <div class="my-2 mx-3 text-center shadow-lg">
+                <button class="btn btn-success" style="height: 40px; width: 100px;">画像変更</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <div class="container vh-100" style="background-color: #B3906C;" >
+    <div class="row h-100">
+
+        <div class="col-4 d-none d-md-block" style="background-color: #C5D435;">
+            <div class="my-5 mx-autot px-3 shadow-lg"
+                 style="background-color: #E26523; border-radius: 10px; color: #F3F5AE;">
+                <h1>JS</h1>
+                <h2>puzzle</h2>
+                <p style="text-align: right;">byゆじろ</p>
+            </div>
+            <div class="my-5 mx-auto text-center shadow-lg">
+                <button class="start-btn btn w-100" style="font-size: 1.5rem; font-weight: bolder; height: 50px; background-color: #A8A0CE;">START</button>
+            </div>
+            <div class="my-5 mx-auto text-center shadow-lg">
+                <button class="stop-btn btn w-100 d-none" style="font-size: 1.5rem; font-weight: bolder; height: 50px; background-color: #B3213B;">GIVE UP</button>
+            </div>
+            <div class="my-5 mx-auto text-center shadow-lg">
+                <button class="change-btn btn w-100" style="font-size: 1.5rem; font-weight: bolder; height: 50px; background-color: #0378C5;">画像を変える</button>
+            </div>
+            <div class="my-5 mx-auto text-center shadow-lg">
+                <button class="complete-btn btn w-100 d-none" style="font-size: 1.5rem; font-weight: bolder; height: 50px; background-color: #00A09A;">完成図を見る</button>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-8">
+            
+            <div class="row pt-3">
+                <div id="target-wrap" class="d-flex flex-wrap col-10" style="margin: auto; padding:0; width: 400px; height: 400px; background-color: #96CAE6;">
+                    <div id="target-1"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="1" data-y="1" data-answer="1" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_01.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-2"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="2" data-y="1" data-answer="2" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_02.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-3"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="3" data-y="1" data-answer="3" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_03.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-4"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="4" data-y="1" data-answer="4" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_04.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-5"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="1" data-y="2" data-answer="5" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_05.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-6"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="2" data-y="2" data-answer="6" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_06.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-7"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="3" data-y="2" data-answer="7" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_07.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-8"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="4" data-y="2" data-answer="8" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_08.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-9"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="1" data-y="3" data-answer="9" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_09.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-10"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="2" data-y="3" data-answer="10" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_10.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-11"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="3" data-y="3" data-answer="11" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_11.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-12"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="4" data-y="3" data-answer="12" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_12.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-13"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="1" data-y="4" data-answer="13" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_13.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-14"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="2" data-y="4" data-answer="14" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_14.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-15"  class=" border-light border-1 bg-dark"
+                        style="transition:all 180ms; height:100px; width:100px;"
+                        data-x="3" data-y="4" data-answer="15" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_15.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="target-16"  class=" border-light border-1 bg-dark"
+                        style="transition:all 800ms; height:100px; width:100px;"
+                        data-x="3" data-y="4" data-answer="15" data-right="true" data-left="true" data-top="true" data-bottom="true">
+                        <img src="images/halloween_16.gif" alt="otukimi" style="width: 100%;">
+                    </div>
+                    <div id="imgComplete" class="m-auto bg-dark" style="height: 400px; width: 400px; z-index: 2;; position: absolute; background-color: white;">
+                        <img src="images/halloween.gif" alt="complete" style="width: 100%;">
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 col-sm-10 my-3" 
+                     style="margin: auto; height: 110px; background-color: #634133; border-radius: 30px;">
+                    <p id="timer" class="text-center m-0 h-0"
+                       style=" font-size: 70px; color: #F3F5AE;">
+                       00'00''0
+                    </p>
+                    <p id="clear" class="text-center m-0 h-0 d-none" style="font-size: 40px; color: #634133;">おめでとうございます</p>
+                </div>
+            </div>
+        </div>   
     </div>
   </div>
 
   
-  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./jquery.min.js"></script>
   <script src="function.js"></script>
   <script src="index.js"></script>
+  <script src="stopwatch.js"></script>
 </body>
 </html>
