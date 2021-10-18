@@ -51,11 +51,11 @@ let setTime = null;
      let reset = 0;
      $(".complete-btn").on('click',()=> {
           if(reset === 0){
-               $(".complete-btn").html("パズルに戻る");
+               $(".complete-btn").children("button").html("戻る");
                $("#imgComplete").removeClass("d-none");
                reset = 1;
           }else{
-               $(".complete-btn").html("完成図を見る");
+               $(".complete-btn").children("button").html("完成図");
                $("#imgComplete").addClass("d-none");
                reset = 0;
           }

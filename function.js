@@ -3,17 +3,18 @@
 function PositionInitial(){
 
   const randomImitation =[
-    // [12,5,7,10,6,8,3,9,2,4,15,1,14,11,13],
-    // [6,3,13,1,9,4,10,2,7,12,5,15,8,11,14],
-    // [15,10,6,13,5,4,3,9,2,7,11,8,14,1,12],
-    // [14,13,3,11,10,6,8,1,5,15,7,4,9,2,12],
-    // [10,7,6,12,15,11,8,14,2,5,13,4,9,3,1],
-    // [7,14,15,9,13,6,5,4,3,10,8,12,2,1,11],
-    // [3,13,8,9,14,12,1,7,4,5,11,15,10,2,6]
-    [1,2,3,4,5,6,7,8,9,10,12,15,13,14,11]
+    [12,5,7,10,6,8,3,9,2,4,15,1,14,11,13],
+    [6,3,13,1,9,4,10,2,7,12,5,15,8,11,14],
+    [15,10,6,13,5,4,3,9,2,7,11,8,14,1,12],
+    [14,13,3,11,10,6,8,1,5,15,7,4,9,2,12],
+    [10,7,6,12,15,11,8,14,2,5,13,4,9,3,1],
+    [7,14,15,9,13,6,5,4,3,10,8,12,2,1,11],
+    [3,13,8,9,14,12,1,7,4,5,11,15,10,2,6]
+    // 完成テスト用簡単配置
+    // [1,2,3,4,5,6,7,8,9,10,12,15,13,14,11]
   ];
   
-  const randomPosition = Math.floor(Math.random() * 1);
+  const randomPosition = Math.floor(Math.random() * 7);
 
     for(i=0;i<15;i++){
       position[i] = (randomImitation[randomPosition][i]);
@@ -120,8 +121,8 @@ function InitialMove(){
         
       }
     }
-    position_y *= 100;
-    position_x *= 100;
+    position_y *= 90;
+    position_x *= 90;
 
     xMove[i] = position_x;
     yMove[i] = position_y;
@@ -164,20 +165,20 @@ function MovingConfig(){
 function MovingJudge(p){
 
   if(goRight[p] && empty === position[p] + 1){
-    xMove[p] += 100;
+    xMove[p] += 90;
     judge = true;
   }
   if(goLeft[p] && empty === position[p] - 1){
-    xMove[p] -= 100;
+    xMove[p] -= 90;
     judge = true;
 
   }
   if(goTop[p] && empty === position[p] - 4){
-    yMove[p] -= 100;
+    yMove[p] -= 90;
     judge = true;
   }
   if(goBottom[p] && empty === position[p] + 4){
-    yMove[p] += 100;
+    yMove[p] += 90;
     judge = true;
   }
 }
